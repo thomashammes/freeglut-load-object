@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{C493512C-ADA1-455A-8814-08A84445D904}|freeglut-tentativa3.vcxproj|solutionrelative:freeglut-tentativa3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C493512C-ADA1-455A-8814-08A84445D904}|freeglut-tentativa3.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.39.33519\\INCLUDE\\VECTOR||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,8 +27,7 @@
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
               "ViewState": "AQIAAFMHAAAAAAAAAAAuwGQHAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-22T03:50:00.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T03:50:00.857Z"
             },
             {
               "$type": "Document",
@@ -38,7 +37,7 @@
               "RelativeDocumentMoniker": "freeglut-tentativa3.cpp",
               "ToolTip": "E:\\0_FACULDADE\\7_Periodo\\Computacao_Grafica\\M2\\Trabalho\\freeglut-load-object\\freeglut-tentativa3.cpp",
               "RelativeToolTip": "freeglut-tentativa3.cpp",
-              "ViewState": "AQIAANUAAAAAAAAAAAAAAOQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-21T00:21:57.504Z",
               "EditorCaption": ""

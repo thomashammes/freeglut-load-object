@@ -1,13 +1,13 @@
 ﻿  freeglut-tentativa3.cpp
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(28,12): warning C4267: 'return': conversão de 'size_t' para 'int', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(46,22): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(184,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(184,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(184,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(218,26): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(218,20): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(219,24): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(219,19): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(219,14): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(247,23): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(135,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(135,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(135,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(182,26): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(182,20): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(183,24): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(183,19): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(183,14): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(208,23): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(257,12): warning C4267: 'return': conversão de 'size_t' para 'int', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(262,22): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
   freeglut-tentativa3.vcxproj -> E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\x64\Debug\freeglut-tentativa3.exe

@@ -5,59 +5,25 @@
 #include <string>
 using namespace std;
 
-
 enum FaceIndexType {
     VERTICE,
     TEXTURE,
     NORMAL
 };
 
-int nthOccurrence(const string& str, const string& findMe, int nth)
-{
-    size_t  pos = 0;
-    int     count = 0;
-
-    while (count != nth)
-    {
-        pos += 1;
-        pos = str.find(findMe, pos);
-        if (pos == string::npos)
-            return -1;
-        count++;
-    }
-    return pos;
-}
-
-//globals
-
-unsigned int elefante;
+// GLOBALS
 vector<vector<float>> vertices;
 vector<vector<float>> textures;
 vector<vector<float>> normals;
 float rot_ele;
-
 // triangle faces indexes
 vector<vector<int>> vertices_indexes;
 vector<vector<int>> textures_indexes;
 vector<vector<int>> normals_indexes;
 
-int findIndexFromString(string &string, FaceIndexType type) {
-    int substringStart = nthOccurrence(string, "/", type);
-    int substringEnd = type < NORMAL ? nthOccurrence(string, "/", type + 1) : string.length() - 1;
-    if (type > VERTICE) substringStart++;
-    bool isValidSubstring = substringStart != -1 && substringEnd != -1;
-    bool isEmptyValue = substringStart == substringEnd;
+int nthOccurrence(const string& str, const string& findMe, int nth);
 
-    if (isValidSubstring) {
-        if (isEmptyValue) {
-            return -1;
-        }
-        else {
-            return stoi(string.substr(substringStart, substringEnd)) - 1;
-        }
-    }
-    return -1;
-}
+int findIndexFromString(string& string, FaceIndexType type);
 
 void pushFaceToIndexesArray(int fp, int fs, int ft, FaceIndexType type) {
     vector<int> face;
@@ -87,7 +53,7 @@ void newFaceIndex(string x, string y, string z, FaceIndexType type) {
 void newFaceFrom(istream& arquivo) {
     string x, y, z;
     arquivo >> x >> y >> z;
-    newFaceIndex(x, y, z, VERTICE); //cout << nthOccurrence(x, "/", 2);
+    newFaceIndex(x, y, z, VERTICE);
     newFaceIndex(x, y, z, TEXTURE);
     newFaceIndex(x, y, z, NORMAL);
 }
@@ -159,18 +125,6 @@ void loadObj(string fname)
     arquivo.close();
 }
 
-void reshape(int w, int h)
-{
-    glViewport(0, 0, w, h);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(60, (GLfloat)w / (GLfloat)h, 0.1, 1000.0);
-
-    glDepthFunc(GL_LEQUAL);
-
-    glMatrixMode(GL_MODELVIEW);
-}
-
 void setupLighting() {
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
@@ -185,6 +139,19 @@ void setupLighting() {
     glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+}
+
+
+void reshape(int w, int h)
+{
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(60, (GLfloat)w / (GLfloat)h, 0.1, 1000.0);
+
+    glDepthFunc(GL_LEQUAL);
+
+    glMatrixMode(GL_MODELVIEW);
 }
 
 void addGlVertex(int verticeIndex) {
@@ -265,10 +232,44 @@ int main(int argc, char** argv)
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutTimerFunc(10, timer, 0);
-    loadObj("data/porsche.obj");
+    loadObj("data/mba1.obj");
 
     glEnable(GL_DEPTH_TEST);
 
     glutMainLoop();
     return 0;
+}
+
+int nthOccurrence(const string& str, const string& findMe, int nth)
+{
+    size_t  pos = 0;
+    int     count = 0;
+
+    while (count != nth)
+    {
+        pos += 1;
+        pos = str.find(findMe, pos);
+        if (pos == string::npos)
+            return -1;
+        count++;
+    }
+    return pos;
+}
+
+int findIndexFromString(string& string, FaceIndexType type) {
+    int substringStart = nthOccurrence(string, "/", type);
+    int substringEnd = type < NORMAL ? nthOccurrence(string, "/", type + 1) : string.length() - 1;
+    if (type > VERTICE) substringStart++;
+    bool isValidSubstring = substringStart != -1 && substringEnd != -1;
+    bool isEmptyValue = substringStart == substringEnd;
+
+    if (isValidSubstring) {
+        if (isEmptyValue) {
+            return -1;
+        }
+        else {
+            return stoi(string.substr(substringStart, substringEnd)) - 1;
+        }
+    }
+    return -1;
 }
