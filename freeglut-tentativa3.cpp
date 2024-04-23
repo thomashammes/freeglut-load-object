@@ -11,15 +11,30 @@ enum FaceIndexType {
     NORMAL
 };
 
-// GLOBALS
+// globals
 vector<vector<float>> vertices;
 vector<vector<float>> textures;
 vector<vector<float>> normals;
 float rot_ele;
+
 // triangle faces indexes
 vector<vector<int>> vertices_indexes;
 vector<vector<int>> textures_indexes;
 vector<vector<int>> normals_indexes;
+
+// rotate, scale, translate
+GLfloat scale = 0.5;
+
+GLfloat translateX = 0;
+GLfloat translateY = -40.00;
+GLfloat translateZ = -105;
+
+int xDegrees = 0, yDegrees = 0, zDegrees = 0; // graus de rotação
+int modDegree = 360;
+bool xAxisActivated = false;
+bool yAxisActivated = false;
+bool zAxisActivated = false;
+
 
 int nthOccurrence(const string& str, const string& findMe, int nth);
 
@@ -129,7 +144,6 @@ void setupLighting() {
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
 
-    // Set up light properties
     GLfloat light_position[] = { 100.0, 100.0, 100.0, 1.0 };
     GLfloat light_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
     GLfloat light_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
@@ -162,25 +176,27 @@ void addGlVertex(int verticeIndex) {
 }
 
 void addGlNormal(int normalIndex) {
-    float nX = normalIndex > -1 ? normals[normalIndex][0] : 0.0f;
-    float nY = normalIndex > -1 ? normals[normalIndex][1] : 0.0f;
-    float nZ = normalIndex > -1 ? normals[normalIndex][2] : 0.0f;
+    float nX = normals[normalIndex][0];
+    float nY = normals[normalIndex][1];
+    float nZ = normals[normalIndex][2];
     glNormal3f(nX, nY, nZ);
 }
 
 void addGlTexCoord(int textureIndex) {
-    float tU = textureIndex > -1 ? textures[textureIndex][0] : 0.0f;
-    float tV = textureIndex > -1 ? textures[textureIndex][1] : 0.0f;
+    float tU = textures[textureIndex][0];
+    float tV = textures[textureIndex][1];
     glTexCoord2f(tU, tV);
 }
 
 void drawObject()
 {
     glPushMatrix();
-    glTranslatef(0, -40.00, -105);
     glColor3f(1.0, 0.23, 0.27);
-    glScalef(0.4, 0.4, 0.4);
-    glRotatef(rot_ele, 0, 1, 0);
+    glTranslatef(translateX, translateY, translateZ);
+    glScalef(scale, scale, scale);
+    glRotatef(xDegrees, xAxisActivated || (!xAxisActivated && xDegrees > 0), false, false);
+    glRotatef(yDegrees, false, yAxisActivated || (!yAxisActivated && yDegrees > 0), false);
+    glRotatef(zDegrees, false, false, zAxisActivated || (!zAxisActivated && zDegrees > 0));
 
     setupLighting();
 
@@ -188,15 +204,19 @@ void drawObject()
 
     glBegin(GL_TRIANGLES);
     for (int i = 0; i < vertices_indexes.size(); i++) {
-        vector<int> verticesArray = vertices_indexes[i];
-        vector<int> texturesArray = textures_indexes[i];
-        vector<int> normalsArray = normals_indexes[i];
+        
+        for (int j = 0; j < 3; ++j)
+        {
+            int verticeIndex = vertices_indexes[i][j];
+            int textureIndex = textures_indexes[i][j];
+            int normalIndex = normals_indexes[i][j];
 
-        for (int j = 0; j < 3; j++) {
-
-            addGlVertex(verticesArray[j]);
-            addGlNormal(normalsArray[j]);
-            addGlTexCoord(texturesArray[j]);
+            if (textureIndex >= 0)
+                addGlTexCoord(textureIndex);
+            if (normalIndex >= 0)
+                addGlNormal(normalIndex);
+            if (verticeIndex >= 0)
+                addGlVertex(verticeIndex);
         }
     }
     glEnd();
@@ -204,8 +224,6 @@ void drawObject()
     glDisable(GL_DEPTH_TEST);
 
     glPopMatrix();
-    rot_ele = rot_ele + 0.6;
-    if (rot_ele > 360) rot_ele = rot_ele - 360;
 }
 
 void display(void)
@@ -218,8 +236,92 @@ void display(void)
 }
 
 void timer(int value) {
+    if (xAxisActivated) {
+        xDegrees += 1;
+    }
+    else if (!xAxisActivated && xDegrees > 0) {
+        if (xDegrees >= modDegree) {
+            xDegrees = xDegrees % modDegree;
+        }
+        xDegrees -= 1;
+    }
+
+    if (yAxisActivated) {
+        if (yDegrees >= 360) {
+            yDegrees = 0;
+        }
+        yDegrees += 1;
+    }
+    else if (!yAxisActivated && yDegrees > 0) {
+        if (yDegrees >= modDegree) {
+            yDegrees = yDegrees % modDegree;
+        }
+        yDegrees -= 1;
+    }
+
+    if (zAxisActivated) {
+        zDegrees += 1;
+    }
+    else if (!zAxisActivated && zDegrees > 0) {
+        if (zDegrees >= modDegree) {
+            zDegrees = zDegrees % modDegree;
+        }
+        zDegrees -= 1;
+    }
     glutPostRedisplay();
     glutTimerFunc(10, timer, 0);
+}
+
+void keyboardControl(unsigned char key, int x, int y) {
+    switch (key) {
+    case 27:
+        exit(0);
+        break;
+    case 'x':
+    case 'X':
+        xAxisActivated = !xAxisActivated;
+        break;
+    case 'y':
+    case 'Y':
+        yAxisActivated = !yAxisActivated;
+        break;
+    case 'z':
+    case 'Z':
+        zAxisActivated = !zAxisActivated;
+        break;
+    case 'a':
+    case 'A':
+        translateX -= 1;
+        break;
+    case 'd':
+    case 'D':
+        translateX += 1;
+        break;
+    case 's':
+    case 'S':
+        translateY -= 1;
+        break;
+    case 'w':
+    case 'W':
+        translateY += 1;
+        break;
+    case 'q':
+    case 'Q':
+        translateZ -= 1;
+        break;
+    case 'e':
+    case 'E':
+        translateZ += 1;
+        break;
+    case 'f':
+    case 'F':
+        scale *= 0.9;
+        break;
+    case 'r':
+    case 'R':
+        scale *= 1.1;
+        break;
+    }
 }
 
 int main(int argc, char** argv)
@@ -229,6 +331,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(800, 450);
     glutInitWindowPosition(20, 20);
     glutCreateWindow("Carregar OBJ");
+    glutKeyboardFunc(keyboardControl);
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutTimerFunc(10, timer, 0);
@@ -258,17 +361,17 @@ int nthOccurrence(const string& str, const string& findMe, int nth)
 
 int findIndexFromString(string& string, FaceIndexType type) {
     int substringStart = nthOccurrence(string, "/", type);
-    int substringEnd = type < NORMAL ? nthOccurrence(string, "/", type + 1) : string.length() - 1;
+    int substringLength = type < NORMAL ? nthOccurrence(string, "/", type + 1) : string.length();
     if (type > VERTICE) substringStart++;
-    bool isValidSubstring = substringStart != -1 && substringEnd != -1;
-    bool isEmptyValue = substringStart == substringEnd;
+    bool isValidSubstring = substringStart != -1 && substringLength != -1;
+    bool isEmptyValue = substringStart == substringLength;
 
     if (isValidSubstring) {
         if (isEmptyValue) {
             return -1;
         }
         else {
-            return stoi(string.substr(substringStart, substringEnd)) - 1;
+            return stoi(string.substr(substringStart, substringLength - substringStart)) - 1;
         }
     }
     return -1;
