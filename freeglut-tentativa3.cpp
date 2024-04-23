@@ -29,11 +29,16 @@ GLfloat translateX = 0;
 GLfloat translateY = -40.00;
 GLfloat translateZ = -105;
 
-int xDegrees = 0, yDegrees = 0, zDegrees = 0; // graus de rotação
+int xDegrees = 0, yDegrees = 0, zDegrees = 0;
 int modDegree = 360;
 bool xAxisActivated = false;
 bool yAxisActivated = false;
 bool zAxisActivated = false;
+
+// lights
+bool light1Enabled = true;
+bool light2Enabled = true;
+bool light3Enabled = true;
 
 
 int nthOccurrence(const string& str, const string& findMe, int nth);
@@ -141,20 +146,53 @@ void loadObj(string fname)
 }
 
 void setupLighting() {
+
     glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
+    if (light1Enabled) {
+        glEnable(GL_LIGHT0);
+        GLfloat light0_position[] = { 100.0, 100.0, 100.0, 1.0 };
+        GLfloat light0_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
+        GLfloat light0_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
+        GLfloat light0_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+        glLightfv(GL_LIGHT0, GL_POSITION, light0_position);
+        glLightfv(GL_LIGHT0, GL_AMBIENT, light0_ambient);
+        glLightfv(GL_LIGHT0, GL_DIFFUSE, light0_diffuse);
+        glLightfv(GL_LIGHT0, GL_SPECULAR, light0_specular);
+    }
+    else {
+        glDisable(GL_LIGHT0);
+    }
 
-    GLfloat light_position[] = { 100.0, 100.0, 100.0, 1.0 };
-    GLfloat light_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
-    GLfloat light_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat light_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+    if (light2Enabled) {
+        glEnable(GL_LIGHT1);
+        GLfloat light1_position[] = { -100.0, -100.0, 0.0, 1.0 };
+        GLfloat light1_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
+        GLfloat light1_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
+        GLfloat light1_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+        glLightfv(GL_LIGHT1, GL_POSITION, light1_position);
+        glLightfv(GL_LIGHT1, GL_AMBIENT, light1_ambient);
+        glLightfv(GL_LIGHT1, GL_DIFFUSE, light1_diffuse);
+        glLightfv(GL_LIGHT1, GL_SPECULAR, light1_specular);
+    }
+    else {
+        glDisable(GL_LIGHT1);
+    }
 
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+    if (light3Enabled) {
+        glEnable(GL_LIGHT2);
+        GLfloat light2_position[] = { 50.0, 500.0, 150.0, 1.0 };
+        GLfloat light2_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
+        GLfloat light2_diffuse[] = { 1.0, 1.0, 1.0, 1.0 };
+        GLfloat light2_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+        glLightfv(GL_LIGHT2, GL_POSITION, light2_position);
+        glLightfv(GL_LIGHT2, GL_AMBIENT, light2_ambient);
+        glLightfv(GL_LIGHT2, GL_DIFFUSE, light2_diffuse);
+        glLightfv(GL_LIGHT2, GL_SPECULAR, light2_specular);
+    }
+    else {
+        glDisable(GL_LIGHT2);
+    }
 }
-
 
 void reshape(int w, int h)
 {
@@ -320,6 +358,15 @@ void keyboardControl(unsigned char key, int x, int y) {
     case 'r':
     case 'R':
         scale *= 1.1;
+        break;
+    case '1':
+        light1Enabled = !light1Enabled;
+        break;
+    case '2':
+        light2Enabled = !light2Enabled;
+        break;
+    case '3':
+        light3Enabled = !light3Enabled;
         break;
     }
 }

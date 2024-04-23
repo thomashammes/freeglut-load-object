@@ -1,14 +1,20 @@
 ﻿  freeglut-tentativa3.cpp
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(148,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(148,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(148,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(194,26): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(194,20): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(197,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(198,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(199,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(318,21): warning C4305: '*=': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(322,21): warning C4305: '*=': truncamento de 'double' para 'GLfloat'
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(359,12): warning C4267: 'return': conversão de 'size_t' para 'int', possível perda de dados
-E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(364,25): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(154,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(154,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(154,48): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(170,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(170,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(170,48): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(186,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(186,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(186,48): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(234,26): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(234,20): warning C4305: 'argumento': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(237,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(238,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(239,15): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(358,21): warning C4305: '*=': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(362,21): warning C4305: '*=': truncamento de 'double' para 'GLfloat'
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(408,12): warning C4267: 'return': conversão de 'size_t' para 'int', possível perda de dados
+E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\freeglut-tentativa3.cpp(413,25): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
   freeglut-tentativa3.vcxproj -> E:\0_FACULDADE\7_Periodo\Computacao_Grafica\M2\Trabalho\freeglut-load-object\x64\Debug\freeglut-tentativa3.exe
